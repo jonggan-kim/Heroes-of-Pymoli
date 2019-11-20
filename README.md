@@ -27,6 +27,7 @@ player_demo=player_demo.drop_duplicates()
 #Total number of players
 player_count=player_demo.count()[1]
 
+
 #### Display total number of players as data frame
 pd.DataFrame({"Total Players": [player_count]})
 

@@ -20,27 +20,25 @@ purchase_data = pd.read_csv(file_to_load)
 purchase_data.head()
 
 player_demo = purchase_data.loc[:, ["Gender", "SN", "Age"]]
-    
+<img src="images/purchasedata.png">    
 
 player_demo=player_demo.drop_duplicates()
 
 #Total number of players
 player_count=player_demo.count()[1]
 
-
 #### Display total number of players as data frame
 pd.DataFrame({"Total Players": [player_count]})
+<img src="images/totalplayers.png">    
 
 ### Purchasing Analysis (Total)
 
 * Run basic calculations to obtain number of unique items, average price, etc.
 
-
 * Create a summary data frame to hold the results
 
 
-* Optional: give the displayed data cleaner formatting
-
+ 
 
 * Display the summary data frame
 
@@ -64,6 +62,7 @@ summary_table["Total Revenue"]=summary_table["Total Revenue"].map("${:,.2f}".for
 
 ### Display the summary data frame
 summary_table
+<img src="images/purchasing_analysis.png">    
 
 ### Gender Demographics
 
@@ -89,8 +88,7 @@ gender_demo=gender_demo.round(2)
 
 ### Display gender data frame
 gender_demo
-
-
+<img src="images/gender_demo.png">    
 ### Purchasing Analysis (Gender)
 
 * Run basic calculations to obtain purchase count, avg. purchase price, avg. purchase total per person etc. by gender
@@ -145,8 +143,7 @@ summary_data
 
 
 * Display Age Demographics Table
-
-
+<img src="images/purchasing_analysis_gender.png">    
 ### Establish the bins 
 age_bins = [0, 9.90, 14.90, 19.90, 24.90, 29.90, 34.90, 39.90, 999]
 age_names = ["<10", "10-14", "15-19", "20-24", "25-29", "30-34", "35-39", "40+"]
@@ -203,7 +200,7 @@ age_summary_data = age_summary_data.loc[:, ["Purchase Count", "Average Purchase 
 
 ### Display the Summary Table
 age_summary_data
-
+<img src="images/purchasing_analysis_age.png">    
 ## Top Spenders
 
 * Run basic calculations to obtain the results in the table below
@@ -236,7 +233,7 @@ sn_sort = sn_sort.loc[:,["Purchase Count", "Average Purchase Price", "Total Purc
 
 ### Display a preview of the summary data frame
 sn_sort.head(5)
-
+<img src="images/top_spender.png">    
 ## Most Popular Items
 
 * Retrieve the Item ID, Item Name, and Item Price columns
@@ -279,7 +276,7 @@ item_data_count_sorted["Total Purchase Value"] = item_data_count_sorted["Total P
 item_popularity = item_data_count_sorted.loc[:,["Purchase Count", "Item Price", "Total Purchase Value"]]
 
 item_popularity.head(5)
-
+<img src="images/top_popular_items.png">    
 ### Most Profitable Items
 
 * Sort the above table by total purchase value in descending order
@@ -299,6 +296,5 @@ item_profitable = item_data_count_sorted.loc[:,["Purchase Count", "Item Price", 
 
 ### Display data frame
 item_profitable.head(5)
-
-
+<img src="images/top_profitable_items.png">    
 
